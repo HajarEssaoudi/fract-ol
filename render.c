@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 06:57:40 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/26 08:31:36 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/03/01 10:56:54 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,19 @@ void	render_julia(t_data *data)
 	t_complex	z;
 	int			color;
 	double		tmp;
+	int 		x, y, i;
 
-	int x, y, i;
-	z.c_re = -0.7;
-	z.c_im = 0.27015;
+	z.c_re = 0.285;
+	z.c_im = 0;
+
 	y = 0;
 	while (y < HEIGHT)
 	{
 		x = 0;
 		while (x < WIDTH)
 		{
-			z.z_re = 1.5 * (x - WIDTH / 2) / (0.5 * WIDTH);
-			z.z_im = (y - HEIGHT / 2) / (0.5 * HEIGHT);
+			z.z_re = ((x - WIDTH / 2) / (0.5 * WIDTH) * data->zoom) + data->move_x;
+			z.z_im = ((y - HEIGHT / 2) / (0.5 * HEIGHT) * data->zoom) + data->move_y;
 			i = 0;
 			while (z.z_re * z.z_re + z.z_im * z.z_im < 4 && i < MAX_ITER)
 			{

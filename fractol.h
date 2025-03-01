@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 23:26:34 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/26 08:22:16 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/03/01 10:00:32 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ void		render_julia(t_data *data);
 // events
 int			close_window(t_data *data);
 int			key_hook(int keycode, t_data *data);
-
+int			mouse_hook(int button, int x, int y, t_data *data);
 #endif
